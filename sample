@@ -1,0 +1,29 @@
+#! /bin/sh
+
+### BEGIN INIT INFO
+# Provides:          sample-script
+# Required-Start:
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: sample-script description
+### END INIT INFO
+
+
+
+case "$1" in
+  start)
+    /path/to/sample-script start
+    ;;
+  stop)
+    pkill -9 -f sample-script
+    #or  /path/to/sample-script stop
+    ;;
+  *)
+    echo "Usage: /etc/init.d/$NAME {start|stop}" >&2
+    exit 1
+    ;;
+esac
+
+exit 0
+
